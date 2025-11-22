@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mjnb fingerprinting | Your Fingerprint</title>
+    <meta name="description" content="See what data your browser reveals to websites.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">mjnb</h1>
+            </a>
+            <nav>
+                <a href="fingerprint.html" class="btn btn-primary">Your Fingerprint</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero small-hero">
+            <div class="container">
+                <h2 class="hero-title">Your <span class="gradient-text">Digital Fingerprint</span></h2>
+                <p class="hero-subtitle">This is a sample of the data accessible to any website you visit.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-grid container">
+            <!-- Identity & System -->
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Operating System</span>
+                        <span class="card-info">Derived from User Agent</span>
+                    </div>
+                    <div class="card-value" id="os-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The software that manages your computer's hardware and resources.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Browser</span>
+                        <span class="card-info">Name & Version</span>
+                    </div>
+                    <div class="card-value" id="browser-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The application you are using to access the internet.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Platform</span>
+                        <span class="card-info">navigator.platform</span>
+                    </div>
+                    <div class="card-value" id="platform-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The underlying platform the browser is running on.</p>
+                </div>
+            </div>
+            <div class="data-card" style="grid-column: span 2;">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">User Agent</span>
+                        <span class="card-info">Full string</span>
+                    </div>
+                    <div class="card-value small" id="ua-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">A string identifying your browser and operating system to websites.</p>
+                </div>
+            </div>
+
+            <!-- Screen & Window -->
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Screen Resolution</span>
+                        <span class="card-info">Width x Height</span>
+                    </div>
+                    <div class="card-value" id="res-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The total number of pixels on your screen.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Available Screen</span>
+                        <span class="card-info">Minus taskbars/docks</span>
+                    </div>
+                    <div class="card-value" id="avail-res-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The screen space available for windows (excluding taskbars).</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Window Size</span>
+                        <span class="card-info">Inner Width x Height</span>
+                    </div>
+                    <div class="card-value" id="win-size-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The current size of your browser window.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Color Depth</span>
+                        <span class="card-info">Bits per pixel</span>
+                    </div>
+                    <div class="card-value" id="color-depth-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The number of bits used to indicate the color of a single pixel.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Pixel Ratio</span>
+                        <span class="card-info">Device Pixel Ratio</span>
+                    </div>
+                    <div class="card-value" id="pixel-ratio-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The ratio between physical pixels and logical CSS pixels.</p>
+                </div>
+            </div>
+
+            <!-- Locale & Time -->
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Language</span>
+                        <span class="card-info">Preferred language</span>
+                    </div>
+                    <div class="card-value" id="lang-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">Your preferred language setting for web content.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Timezone</span>
+                        <span class="card-info">Local timezone</span>
+                    </div>
+                    <div class="card-value" id="timezone-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">Your local time zone setting.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Timezone Offset</span>
+                        <span class="card-info">Minutes from UTC</span>
+                    </div>
+                    <div class="card-value" id="timezone-offset-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The difference in minutes between your time and UTC.</p>
+                </div>
+            </div>
+
+            <!-- Hardware & Graphics -->
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">CPU Cores</span>
+                        <span class="card-info">Hardware Concurrency</span>
+                    </div>
+                    <div class="card-value" id="cores-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The number of logical processors available on your device.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Device Memory</span>
+                        <span class="card-info">Approximate RAM (GB)</span>
+                    </div>
+                    <div class="card-value" id="mem-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The approximate amount of RAM on your device.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">GPU Vendor</span>
+                        <span class="card-info">WebGL Unmasked Vendor</span>
+                    </div>
+                    <div class="card-value small" id="gpu-vendor-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The manufacturer of your graphics card.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">GPU Renderer</span>
+                        <span class="card-info">WebGL Unmasked Renderer</span>
+                    </div>
+                    <div class="card-value small" id="gpu-renderer-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The specific model of your graphics card.</p>
+                </div>
+            </div>
+
+            <!-- Browser Features -->
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Cookies Enabled</span>
+                        <span class="card-info">navigator.cookieEnabled</span>
+                    </div>
+                    <div class="card-value" id="cookies-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">Whether your browser allows websites to save small data files.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Do Not Track</span>
+                        <span class="card-info">DNT Header</span>
+                    </div>
+                    <div class="card-value" id="dnt-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">A request to websites not to track your browsing activities.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Touch Points</span>
+                        <span class="card-info">Max Touch Points</span>
+                    </div>
+                    <div class="card-value" id="touch-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The maximum number of simultaneous touch points supported.</p>
+                </div>
+            </div>
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">PDF Viewer</span>
+                        <span class="card-info">Built-in support</span>
+                    </div>
+                    <div class="card-value" id="pdf-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">Whether your browser has built-in PDF viewing capability.</p>
+                </div>
+            </div>
+
+            <!-- Connection -->
+            <div class="data-card">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Connection Type</span>
+                        <span class="card-info">Effective Type</span>
+                    </div>
+                    <div class="card-value" id="connection-val">Loading...</div>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">The estimated effective connection type (e.g., 4G).</p>
+                </div>
+            </div>
+
+            <!-- Advanced -->
+            <div class="data-card" style="grid-column: span 2;">
+                <div class="card-front">
+                    <div class="card-header">
+                        <span class="card-label">Canvas Hash</span>
+                        <span class="card-info">Unique rendering signature</span>
+                    </div>
+                    <div class="card-value small" id="canvas-val">Loading...</div>
+                    <canvas id="fingerprint-canvas" style="display:none;"></canvas>
+                </div>
+                <div class="card-back">
+                    <p class="card-explanation">A unique signature generated by how your browser renders graphics.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">mjnb</a>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="fingerprint.html" class="footer-link">Your Fingerprint</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>designed by mjnb | 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/fingerprint.js"></script>
+</body>
+
+</html>
